@@ -1,0 +1,85 @@
+/**
+ * 
+ * @authors gooofly (wangfei@51xianqu.net, http://www.gooofly.com)
+ * @date    2015-09-05 15:24:44
+ * @version $Id$
+ * 
+ * title
+ * ------------------------------------------
+ */
+// Core variables and mixins
+@rate: 1.44;
+@rem: 100rem / @rate;
+
+@spinnerFontsize: 10px;
+
+.spinner {
+  position: absolute;
+  display: none;
+  width: 5em;
+  height: 5em;
+  font-size: @spinnerFontsize;
+  text-indent: 999em;
+  overflow: hidden;
+  margin-top: -2.5em;
+  margin-left: -2.5em;
+  -webkit-animation: spin 600ms infinite steps(8);
+  animation: spin 600ms infinite steps(8);
+  z-index: 99999;
+
+  &.show {
+    display: block;
+  }
+  &:before,
+  &:after,
+  > div:before,
+  > div:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2.25em; /* (container width - part width)/2  */
+    width: .5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #eee;
+    box-shadow: 0 3.5em #eee; /* container height - part height */
+    -webkit-transform-origin: 50% 2.5em; /* container height / 2 */
+    transform-origin: 50% 2.5em; /* container height / 2 */
+  }
+
+  &:before {
+    background: #555;
+  }
+  &:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background: #777;
+  }
+  > div:before {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    background: #999;
+  }
+  > div:after {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    background: #bbb;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) translateZ(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translateZ(0);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) translateZ(0);
+  }
+  100% {
+    transform: rotate(360deg) translateZ(0);
+  }
+}

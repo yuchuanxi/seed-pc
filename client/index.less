@@ -1,0 +1,289 @@
+/**
+ *
+ * @authors     gooofly (http://gooofly.com, wangfei.f2e@gmail.com)
+ * @date        2016-01-13 10:34:41
+ * @title       title
+ * @description description
+ */
+@import './assets/less/variables.less';
+@import './assets/less/normalize.less';
+
+@bodyBg: #fff;
+// @bodyBg: #171719;
+// @imgUrl: 'assets/img/';
+@bodyFontSize: 16px;
+// @bodyFontfamily: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;
+// @bodyFontfamily: Arial, 'Hiragino Sans GB W3', Roboto, sans-serif;
+@bodyFontfamily: "Helvetica Neue Light", Arial, "Source Han Sans CN", "微软雅黑", sans-serif;
+
+// @headerHeight: 0;
+// @indexH3Padding: 6px 0 6px;
+// @indexH3FontSize: 1.2em;
+
+html {
+  font-size: 35px;
+}
+body {
+  font-family: @bodyFontfamily;
+  font-size: @bodyFontSize;
+  .user-select(none);
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: @bodyBg;
+  // width: 1080/@rem;
+  margin: 0 auto;
+  // position: relative;
+}
+
+.views-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: ;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+.view {
+  height: 100%;
+  overflow: hidden;
+  background-color: @bodyBg;
+  box-sizing: border-box;
+  display: none;
+  padding-top: 80px;
+
+  &.show {
+    display: block;
+  }
+
+  .body {
+    height: 100%;
+    width: 980px;
+    // width: 90%;
+    // max-width: 1280px;
+    // min-width: 970px;
+    margin: auto;
+  }
+  .body-left,
+  .body-right {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 780px;
+    padding-top: 50px;
+  }
+  .body-left {
+    width: 67%;
+  }
+  .body-right {
+    width: 33%;
+
+    h3 {
+      color: #9C9A9B;
+      font-size: 24px;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 2;
+    }
+  }
+
+  .view-split {
+    height: 27/@rem;
+    border-top: 1px solid @borderColor;
+    border-bottom: 1px solid @borderColor;
+    background: #eee;
+  }
+}
+.download-app-wrap {
+  height: 100%;
+  min-height: 566px;
+  background: url(./assets/img/dowload_bg.png) no-repeat center center;
+  background-size: cover;
+  border-bottom: 1px solid #262626;
+  padding-top: 60px;
+  text-align: center;
+
+  .container {
+    display: inline-block;
+    width: 970px;
+    // margin: auto;
+    overflow: hidden;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // margin-top: 50%;
+  }
+
+  .down-left {
+    width: 256px;
+    height: 510px;
+    margin-left: 60px;
+    float: left;
+    padding-top: 50px;
+
+    .phone-img {
+      width: 200px;
+      height: 450px;
+      background: url(./assets/img/iphone6@2x.png) center center no-repeat;
+      background-size: 100%;
+    }
+  }
+  .down-right {
+    float: left;
+    margin-left: 30px;
+    width: 600px;
+
+    h3 {
+      font-size: 34px;
+      font-weight: 200;
+      text-align: center;
+      margin: 100px 0 25px;
+      color: #fff;
+    }
+    .download {
+      margin-top: 60px;
+    }
+    .down-qr {
+      width: 220px;
+      height: 220px;
+      margin-left: 150px;
+      background: url(./assets/img/qr_code.png);
+      // background: url(./assets/img/qr.jpg);
+      background-size: 100%;
+    }
+    // .down-btn {
+    //   text-align: center;
+    //   position: relative;
+    //   margin: 1em auto;
+    //   width: 200px;
+
+    //   &:hover {
+    //     .subpop {
+    //       display: block;
+    //     }
+    //   }
+    // }
+    // .btn {
+    //   text-align: right;
+    //   display: inline-block;
+    //   margin: 0;
+    //   border: 0;
+    //   border-radius: 5px;
+    //   width: 200px;
+    //   background-image: linear-gradient(345deg, #54afff 0%, #51e2ec 100%);
+    //   padding: 18px 30px;
+    //   color: white;
+    //   font-size: 20px;
+    //   font-weight: normal;
+    //   box-sizing: border-box;
+    //   position: relative;
+    //   cursor: pointer;
+
+    //   &:hover {
+    //     color: rgba(255, 255, 255, 0.75);
+    //     background-image: linear-gradient(345deg, #3c81be 0%, #2fb5be 100%);
+
+    //   }
+    //   &::before {
+    //     display: table;
+    //     content: ' ';
+    //     width: 30px;
+    //     height: 30px;
+    //     position: absolute;
+    //     left: 10px;
+    //     top: 50%;
+    //     margin-top: -15px;
+    //     background: center center no-repeat;
+    //     background-size: 100%;
+    //   }
+
+    //   &.qr_code::before {
+    //     background-image: url(./assets/img/qr_code.jpg);
+    //   }
+    //   &.apple::before {
+    //     background-image: url(./assets/img/apple.png);
+    //   }
+    //   &.android::before {
+    //     background-image: url(./assets/img/android.png);
+    //   }
+    // }
+  }
+}
+.subpop {
+  display: none;
+  width: 220px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -110px;
+
+  &::after {
+    display: table;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #ffffff transparent transparent transparent;
+    margin: 0 auto;
+  }
+
+  .subpop_inner {
+    background: #ffffff;
+    padding: 0 0 15px 0;
+    color: #000;
+    line-height: 1;
+    box-shadow: 0px 0px 23px 4px rgba(0, 0, 0, 1);
+
+    .title {
+      font-weight: normal;
+      font-size: 20px;
+      padding: 40px 0 16px 0;
+      margin: 0;
+    }
+    .telnum {
+      font-size: 28px;
+      padding: 0;
+      margin: 0;
+    }
+    .desc {
+      border: 1px solid #ececec;
+      margin: 20px 25px 0;
+      padding: 10px 0 0;
+      color: #3e3b5c;
+    }
+    h5 {
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+    .time {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .workday {
+      font-size: 14px;
+      margin: 0 0 12px;          
+    }
+  }
+
+  .wechat-qr {
+    margin: 0 0 -8px 0;
+    padding: 10px 0 0;
+    width: 220px;
+    height: 200px;
+    background: url(./assets/img/qr.jpg);
+    background-size: 220px;
+  }
+}

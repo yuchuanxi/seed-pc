@@ -1,0 +1,133 @@
+/**
+ *
+ * @authors     gooofly (http://gooofly.com, wangfei.f2e@gmail.com)
+ * @date        2016-01-18 12:02:46
+ * @title       title
+ * @description description
+ */
+@import '../../assets/less/variables.less';
+
+.footer {
+  display: none;
+  // height: @footerHeight;
+  // box-sizing: border-box;
+  border-top: 1px solid #262626;
+  padding: 0 0 33px 0;
+  background: #030303;
+  color: #adadad;
+
+  &.show {
+    display: block;
+  }
+
+  .container {
+    width: 970px;
+    margin: auto;
+    }
+
+  .row::before, .row::after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+  hr {
+    background: #262626;
+    border: 0;
+    height: 1px;
+  }
+
+  .contact {
+    list-style: none;
+    // padding-bottom: 20px;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      width: 160px;
+      // height: 70px;
+      padding: 75px 0 0;
+      font-size: 12px;
+      position: relative;
+
+      &.weibo {
+        background-image: url(../../assets/img/sina_weibo_s@2x.png);
+      }
+      &.wechat {
+        background-image: url(../../assets/img/wechat_s@2x.png);
+      }
+      &.tel {
+        background-image: url(../../assets/img/call_s@2x.png);
+      }
+      &.mail {
+        background-image: url(../../assets/img/email_s@2x.png);
+      }
+      background: center center no-repeat;
+      background-size: 43px;
+    }
+
+    a {
+      color: #adadad;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+
+    li:hover {
+      .subpop {
+        display: block;
+      }
+    }
+  }
+
+  .copyright {
+    width: 40%;
+    color: #525250;
+    font-size: 12px;
+    float: left;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .menu {
+    float: right;
+    width: 30%;
+    list-style: none;
+    text-align: right;
+    margin-right: -8px;
+
+    li {
+      display: inline-block;
+      position: relative;
+      
+      &::after {
+        display: table;
+        content: ' ';
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 1px;
+        height: 12px;
+        background: #adadad;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+    a {
+      color: #adadad;
+      text-decoration: none;
+      padding: 0 10px;
+      font-size: 12px;
+
+      &:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+    }
+  }
+
+
+}

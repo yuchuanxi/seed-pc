@@ -1,0 +1,97 @@
+/**
+ *
+ * @authors gooofly (wangfei@51xianqu.net, http://www.gooofly.com)
+ * @date    2015-09-06 17:52:08
+ * @version $Id$
+ *
+ * title
+ * ------------------------------------------
+ */
+// Core variables and mixins
+@rate: 1.44;
+@rem: 100rem / @rate;
+
+@popupMinHeight: 240 / @rem;
+@popupBorderradius: 10 / @rem;
+@popupTitlePadding: (48 / @rem) (36 / @rem) (10 / @rem);
+@popupTitleFontsize: 36 / @rem;
+@popupContentPadding: (24 / @rem) (40 / @rem)  (32 / @rem);
+@popupContentFontsize: 32 / @rem;
+@popupBtnsHeight: 90 / @rem;
+@popupBtnsFontsize: 48 / @rem;
+/**
+ * Popup Style
+ *
+ */
+.g-popup-mask {
+  display: none;
+  position: absolute;
+  z-index: 1997;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(34, 34, 34, .6);
+
+  &.show {
+    display: block;
+  }
+}
+.g-popup {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1999;
+  min-height: @popupMinHeight;
+  background-color: rgba(246, 246, 246, .9);
+  color: #222;
+  /*box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);*/
+  text-align: center;
+  border-radius: @popupBorderradius;
+
+  &.show {
+    display: block;
+  }
+  &.top {
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  &.bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  &.center {
+    top: 50%;
+    width: 90%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+    transform: translateX(-50%) translateY(-50%) translateZ(0);
+  }
+}
+.g-popup-title {
+  /*padding: 18px 18px 0;*/
+  padding: @popupTitlePadding;
+  font-size: @popupTitleFontsize;
+  margin: 0;
+}
+.g-popup-content {
+  font-size: @popupContentFontsize;
+  line-height: 1.2;
+  padding: @popupContentPadding;
+}
+.g-popup-btns {
+  height: @popupBtnsHeight;
+  line-height: @popupBtnsHeight;
+  color: #ea5550;
+  font-size: @popupBtnsFontsize;
+  display: table;
+  width: 100%;
+}
+.g-popup-btns a {
+   display: table-cell;
+}

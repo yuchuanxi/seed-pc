@@ -1,0 +1,106 @@
+/**
+ *
+ * @authors gooofly (wangfei@51xianqu.net, http://www.gooofly.com)
+ * @date    2015-09-06 17:37:33
+ * @version $Id$
+ *
+ * title
+ * ------------------------------------------
+ */
+// Core variables and mixins
+@rate: 1.44;
+@rem: 100rem / @rate;
+
+// Toast
+@toastMinwidth: 460 / @rem;
+@toastMaxwidth: 660 / @rem;
+@toastWrapPadding: 20 / @rem;
+@toastBorderradius: 20 / @rem;
+@toastFontSize: 30 / @rem;
+
+/**
+ * Toast Style
+ *
+ */
+
+// .g-toast.top {
+//   z-index   : 99999;
+//   display   : none;
+//   position  : absolute;
+//   top       : @headerHeight;
+//   left      : 0;
+//   width     : 100%;
+//   // height    : 80/@rem;
+//   background: rgba(109, 190, 244, 0.90);
+
+//   p {
+//     display   : block;
+//     color     : #fff;
+//     font-size : 28/@rem;
+//     text-align: center;
+//     margin    : 0;
+//     padding   : 20/@rem 0;
+
+//     &:first-child {
+//       display: none;
+//     }
+//   }
+
+//   &.show {
+//     display: block;
+//   }
+
+//   &.info,
+//   &.error {
+//     background: rgba(254, 139, 129, 0.90);
+//   }
+// }
+
+.g-toast.center {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  min-width: @toastMinwidth;
+  max-width: @toastMaxwidth;
+  background-color: rgba(89, 89, 89, .9);
+  color: #fff;
+  padding: @toastWrapPadding;
+  border-radius: @toastBorderradius;
+  box-sizing: border-box;
+
+  &.show {
+
+    display: block;
+  }
+  p {
+
+    text-align: center;
+    font-size: @toastFontSize;
+    line-height: 1.5;
+  }
+  .toast-icon {
+
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    // margin-bottom: 12px;
+    background: url(../../img/toast-icon.png) left top no-repeat;
+    /*background-size: auto 30px;*/
+    background-size: cover;
+  }
+  &.success .toast-icon {
+    background-position: -89px 0;
+  }
+  &.error .toast-icon {
+    background-position: -119px 0;
+  }
+  &.info .toast-icon {
+    background-position: -148px 0;
+  }
+}

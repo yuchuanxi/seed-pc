@@ -1,0 +1,82 @@
+/**
+ *
+ * @authors     gooofly (http://gooofly.com, wangfei.f2e@gmail.com)
+ * @date        2016-01-17 15:47:58
+ * @title       title
+ * @description description
+ */
+@import '../../assets/less/variables.less';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  display: none;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  color: #fff;
+
+  &.show {
+    display: block;
+  }
+
+  .navbar-header {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 80px;
+    position: relative;
+  }
+
+  .navbar-logo {
+    width: 118px;
+    height: 28px;
+    margin-top: 18px;
+    // background: url(../../assets/img/logo.svg) no-repeat;
+    display: inline-block;
+    position: relative;
+
+    svg {
+      transform-origin: 0 0;
+      transform: translate(0, -5px) scale(0.12);
+    }
+  }
+  .navbar-logo-text {
+    width: 69px;
+    height: 46px;
+    position: absolute;
+    top: 19px;
+    left: 85px;
+    background: url(../../assets/img/logo_text.png) no-repeat;
+    background-size: 100%;
+  }
+
+  .navbar-menu {
+    float: right;
+    padding-right: 100px;
+    list-style: none;
+    margin: 0;
+
+    li {
+      float: left;
+      padding: 20px 0;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 30px;
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        box-shadow: 0 1px 1px rgba(0,0,0,.075) inset,0 0 8px rgba(82,168,236,.6);
+      }
+    }
+  }
+}
